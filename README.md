@@ -1,17 +1,19 @@
-Thinkful Capstone: Periodic Tables
-Live app is available here: A full-stack app built using:
+<h2>Thinkful Capstone: Periodic Tables </h2>
 
-HTML
-CSS
-JavaScript
-React
-Express
-Knex
-PostgreSQL API
+<p>Live app is available here: A full-stack app built using:</p>
+
+<li>HTML</li>
+<li>CSS</li>
+<li>JAVASCRIPT</li>
+<li>REACT</li>
+<li>EXPRESS</li>
+<li>KNEX</li>
+<li>PostgreSQL API</li>
 
 
-Available API Endpoints
-URL	Method	Description
+<h3>Available API Endpoints</h3>
+
+<p>URL	Method	Description
 /reservations?date=YYYY-MM-DD	GET	Lists all reservations for the date specified
 /reservations?mobile_number=999-999-9999	GET	Lists all reservations for the phone number specified
 /reservations	POST	Creates a new reservation
@@ -21,4 +23,4 @@ URL	Method	Description
 /tables	GET	Lists all tables
 /tables	POST	Creates a new table
 /tables/:table_id/seat	PUT	Seats a reservation at a table
-/tables/:table_id/seat	DELETE	Finishes an occupied table
+/tables/:table_id/seat	DELETE	Finishes an occupied table</p>
