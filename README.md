@@ -11,7 +11,7 @@
 <li>PostgreSQL API</li>
 
 
-<h3>Available API Endpoints</h3>
+<!-- <h3>Available API Endpoints</h3>
 
 <p>URL	Method	Description
 /reservations?date=YYYY-MM-DD	GET	Lists all reservations for the date specified
@@ -24,3 +24,4 @@
 /tables	POST	Creates a new table
 /tables/:table_id/seat	PUT	Seats a reservation at a table
 /tables/:table_id/seat	DELETE	Finishes an occupied table</p>
+ -->
