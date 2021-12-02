@@ -3,6 +3,8 @@ const request = require("supertest");
 const app = require("../src/app");
 const knex = require("../src/db/connection");
 
+jest.setTimeout(60000); //Longer time out
+
 describe("US-06 - Reservation status", () => {
   beforeAll(() => {
     return knex.migrate
