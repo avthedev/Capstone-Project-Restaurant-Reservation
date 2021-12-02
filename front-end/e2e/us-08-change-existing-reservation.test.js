@@ -1,7 +1,9 @@
 const puppeteer = require("puppeteer");
-const { setDefaultOptions } = require('expect-puppeteer');
+const { setDefaultOptions } = require("expect-puppeteer");
 const fs = require("fs");
 const fsPromises = fs.promises;
+
+jest.setTimeout(60000); //NEEDED TO RUN TESTS WITH A LONGER TIMEOUT!
 
 const { createReservation } = require("./api");
 
@@ -61,8 +63,7 @@ describe("US-08 - Change an existing reservation - E2E", () => {
         await page.waitForSelector(hrefSelector);
 
         await page.screenshot({
-          path:
-            ".screenshots/us-08-dashboard-edit-click-after-no-change-expected.png",
+          path: ".screenshots/us-08-dashboard-edit-click-after-no-change-expected.png",
           fullPage: true,
         });
 
@@ -96,10 +97,10 @@ describe("US-08 - Change an existing reservation - E2E", () => {
         await cancelButton.click();
 
         await page.waitForResponse((response) => {
-          return response.url().includes("/reservations?date=");
+          return response.url().includes("/dashboard?date=");
         });
 
-        await page.waitForTimeout(500);
+        await page.waitForTimeout(5000);
 
         expect(await page.$(cancelButtonSelector)).toBeNull();
       });
@@ -162,7 +163,7 @@ describe("US-08 - Change an existing reservation - E2E", () => {
 
       await Promise.all([
         cancelButton.click(),
-        page.waitForNavigation({ waitUntil: "networkidle0" }),
+        page.waitForNavigation({ timeout: 0, waitUntil: "networkidle0" }),
       ]);
 
       await page.screenshot({
@@ -193,7 +194,7 @@ describe("US-08 - Change an existing reservation - E2E", () => {
 
       await Promise.all([
         submitButton.click(),
-        page.waitForNavigation({ waitUntil: "networkidle0" }),
+        page.waitForNavigation({ timeout: 0, waitUntil: "networkidle0" }),
       ]);
 
       expect(page.url()).toContain("/dashboard");
