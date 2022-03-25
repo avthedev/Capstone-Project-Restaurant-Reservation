@@ -22,7 +22,7 @@ API paths for back-end, use the endpoints: `/reservations` or `/tables`
 
 Built with
 
-- Javascript
+- JavaScript
 - HTML
 - CSS
 - ElephantSQL
