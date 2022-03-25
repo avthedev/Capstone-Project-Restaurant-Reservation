@@ -14,7 +14,7 @@ The backend API is currently running here: [Restaurant Reservation-Back-End](htt
 
 API paths for back-end, use the endpoints: `/reservations` or `/tables`
 
-## Screenshots
+## Demo
 
 ![](./gif/res-rev-demo.gif)
 
