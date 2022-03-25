@@ -30,6 +30,14 @@ Built with
 - Node
 - React & React Hooks
 - Deployed on Vercel
+-
+
+## Features
+
+- Dashboard section (home)
+- Search by phone number of reservation
+- Create a new reservation
+- Create a new table, assigning name and capacity
 
 ## Installation
 
