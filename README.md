@@ -59,7 +59,7 @@ Please make sure to update tests as appropriate.
 
 ## Credits
 
-@ [Thinkful](https://github.com/Thinkful-Ed)
+Starter code by @ [Thinkful](https://github.com/Thinkful-Ed)
 
 ## Author
 
