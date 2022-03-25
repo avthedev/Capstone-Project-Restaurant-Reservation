@@ -30,7 +30,6 @@ Built with
 - Node
 - React & React Hooks
 - Deployed on Vercel
--
 
 ## Features
 
