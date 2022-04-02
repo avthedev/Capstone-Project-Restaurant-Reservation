@@ -61,10 +61,25 @@ function Dashboard() {
   if (reservations) {
     return (
       <main>
-        <div className="d-flex mb-3 justify-content-center">
+        <div className="d-flex m-3 justify-content-left">
           <h1>Your Dashboard</h1>
         </div>
 
+        <div className="container">
+          <div className="d-flex mb-3 justify-content-center">
+            <h2>
+              <b>Date: {viewDate}</b>
+            </h2>
+          </div>
+          <div className="row">
+            {reservations &&
+              reservations.map((res) => (
+                <div className="col-md-6 mb-3" key={res.reservation_id}>
+                  <ReservationDetail reservation={res} />
+                </div>
+              ))}
+          </div>
+        </div>
         <div className="d-flex mb-3 justify-content-around">
           <button className="btn btn-info" onClick={handlePreviousDay}>
             Previous Day
@@ -79,22 +94,9 @@ function Dashboard() {
 
         <ErrorAlert error={error} />
 
+        <br></br>
         <div className="container">
-          <div className="d-flex mb-3 justify-content-center">
-            <h4>Date: {viewDate}</h4>
-          </div>
-          <div className="row">
-            {reservations &&
-              reservations.map((res) => (
-                <div className="col-md-6 mb-3" key={res.reservation_id}>
-                  <ReservationDetail reservation={res} />
-                </div>
-              ))}
-          </div>
-        </div>
-
-        <div className="container">
-          <h3 className="d-flex m-3 justify-content-center">Tables</h3>
+          <h3 className="d-flex m-3 justify-content-left">Tables</h3>
           <div className="row">
             {tables &&
               tables.map((table) => (

@@ -35,9 +35,6 @@ function NewReservation() {
   return (
     <div>
       <ErrorAlert error={error} />
-      <h3 className="d-flex m-3 justify-content-center">
-        New Reservation Form
-      </h3>
 
       <div>
         <ReservationForm

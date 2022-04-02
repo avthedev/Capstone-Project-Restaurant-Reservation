@@ -1,24 +1,30 @@
-.main {
-  background-color: rgb(212, 211, 211);
-  height: 100%;
-  min-height: 100vh;
+body {
+  font-family: "Roboto";
+}
+.bold-text {
+  font-weight: bolder;
+}
+.card-background {
+  background-color: rgb(233, 233, 233);
 }
 
 .list-background {
   background-color: rgb(179, 178, 178);
 }
-
-.card-background {
-  background-color: rgb(233, 233, 233);
+.main {
+  background-color: rgb(212, 211, 211);
+  height: 100%;
+  min-height: 100vh;
 }
-
 .side-bar {
-  background-color: black;
+  background-color: #dfdfde;
   min-width: 200px;
 }
-
-.boldtext {
-  font-weight: bolder;
+.spectrum-background {
+  background: linear-gradient(#678983, transparent),
+    linear-gradient(to top left, #e6ddc4, transparent),
+    linear-gradient(to top right, #f0e9d2, transparent);
+  background-blend-mode: screen;
 }
 
 @media (min-width: 768px) {
@@ -28,7 +34,7 @@
   }
 
   .side-bar {
-    background-color: black;
+    background-color: #181d31;
     min-width: 200px;
     min-height: 100%;
   }

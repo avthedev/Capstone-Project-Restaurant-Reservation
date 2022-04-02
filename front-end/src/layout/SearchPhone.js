@@ -21,34 +21,34 @@ function SearchPhone() {
   };
 
   return (
-    <div>
+    <div className="container">
       <div>
         {showError && (
           <p className="alert alert-danger">No reservations found.</p>
         )}
       </div>
+      <div class="flex-row m-3">
+        <h1 className="">Search Form</h1>
 
-      <h3 className="d-flex m-3 justify-content-center">Search Form</h3>
-
-      <div>
-        <form className="form-group" onSubmit={handleSubmit}>
-          <input
-            name="mobile_number"
-            type="text"
-            placeholder="Enter a customer's phone number"
-            required
-            onChange={(e) => setMobile_number(e.target.value)}
-            value={mobile_number}
-            className="form-control"
-          />
-          <br />
-          <div className="d-flex justify-content-center">
-            <button className="btn btn-primary" type="submit">
-              FIND
-            </button>
+        <form className="form-group " onSubmit={handleSubmit}>
+          <div class="row-cols-3 input-group mb-3 ">
+            <input
+              name="mobile_number"
+              type="text"
+              placeholder="Enter a customer's phone number"
+              required
+              onChange={(e) => setMobile_number(e.target.value)}
+              value={mobile_number}
+              className="form-control "
+            />
+            <div className="input-group-append">
+              <button className="btn btn-primary" type="submit">
+                FIND
+              </button>
+            </div>
           </div>
         </form>
-        <div>
+        <div className="row-cols-2">
           <ul className="list-group list-group-flush">
             {reservations &&
               reservations.map((res) => (

@@ -91,12 +91,6 @@ function ReservationDetail({ reservation }) {
         </div>
 
         <div className="d-flex justify-content-center btn-group">
-          <a
-            href={`/reservations/${currentReservation.reservation_id}/edit`}
-            className="btn btn-sm btn-outline-dark"
-          >
-            EDIT
-          </a>
           <button
             data-reservation-id-cancel={currentReservation.reservation_id}
             onClick={handleCancelRes}
@@ -104,6 +98,12 @@ function ReservationDetail({ reservation }) {
           >
             Cancel Reservation
           </button>
+          <a
+            href={`/reservations/${currentReservation.reservation_id}/edit`}
+            className="btn btn-sm btn-outline-dark"
+          >
+            EDIT
+          </a>
         </div>
       </div>
     </div>

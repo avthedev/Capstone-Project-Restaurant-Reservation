@@ -19,7 +19,7 @@ function TableDetail({ table }) {
         `Occupied by reservation ID: ${currentTable.reservation_id}`
       );
     } else {
-      setTableStatus("Free");
+      setTableStatus("Available");
     }
   }, [currentTable]);
 
@@ -60,10 +60,12 @@ function TableDetail({ table }) {
   };
 
   return (
-    <div className="card text-center card-background">
+    <div className="card text-left card-background">
       <ErrorAlert error={error} />
       <div className="card-body">
-        <p className="card-text">Table Name: {currentTable.table_name}</p>
+        <p className="card-text bold-text">
+          Table Name: {currentTable.table_name}
+        </p>
         <p className="card-text">Table Capacity: {currentTable.capacity}</p>
         <p
           className="card-text"
@@ -72,7 +74,7 @@ function TableDetail({ table }) {
           {tableStatus}
         </p>
         <div className="d-flex justify-content-center">
-          {tableStatus === "Free" ? (
+          {tableStatus === "Available" ? (
             <div></div>
           ) : (
             <div>
@@ -89,7 +91,7 @@ function TableDetail({ table }) {
             </div>
           )}
         </div>
-        <button className="btn btn-danger" onClick={handleDelete}>
+        <button className="btn btn-danger float-right" onClick={handleDelete}>
           Delete
         </button>
       </div>
