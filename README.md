@@ -1,4 +1,4 @@
-# Restaurant Reservation
+# Res Rev
 
 This app allows restaurants to track their reservations and tables as well as assigning and updating their progress.
 
