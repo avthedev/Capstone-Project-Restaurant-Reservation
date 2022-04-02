@@ -14,7 +14,7 @@ The backend API is currently running here: [Restaurant Reservation-Back-End](htt
 
 API paths for back-end, use the endpoints: `/reservations` or `/tables`
 
-## Screenshots
+## Demo
 
 ![](./gif/res-rev-demo.gif)
 
@@ -22,7 +22,7 @@ API paths for back-end, use the endpoints: `/reservations` or `/tables`
 
 Built with
 
-- Javascript
+- JavaScript
 - HTML
 - CSS
 - ElephantSQL
@@ -30,7 +30,6 @@ Built with
 - Node
 - React & React Hooks
 - Deployed on Vercel
--
 
 ## Features
 
@@ -59,7 +58,7 @@ Please make sure to update tests as appropriate.
 
 ## Credits
 
-@ [Thinkful](https://github.com/Thinkful-Ed)
+Starter code by @ [Thinkful](https://github.com/Thinkful-Ed)
 
 ## Author
 
