@@ -16,7 +16,7 @@ API paths for back-end, use the endpoints: `/reservations` or `/tables`
 
 ## Demo
 
-![](./gif/res-rev.png)
+![](./gif/res-rev2.png)
 
 ## Technology
 
