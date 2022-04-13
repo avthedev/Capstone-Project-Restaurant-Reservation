@@ -3,8 +3,6 @@ import { useHistory } from 'react-router-dom';
 import ErrorAlert from '../layout/ErrorAlert';
 import { updateReservationStatus } from '../utils/api';
 
-const dayjs = require('dayjs');
-
 function ReservationDetail({ reservation }) {
   const history = useHistory();
 
@@ -63,7 +61,7 @@ function ReservationDetail({ reservation }) {
           {currentReservation.reservation_time}
         </h4>
         <p className='card-text text-center'>
-          {dayjs(currentReservation.reservation_date).format('MM/DD/YYYY')}
+          {currentReservation.reservation_date}
         </p>
 
         <p className='card-text'>
