@@ -1,41 +1,165 @@
 body {
-  font-family: "Roboto";
+  font-family: 'Roboto';
 }
 .bold-text {
   font-weight: bolder;
 }
 .card-background {
-  background-color: rgb(233, 233, 233);
+  background-color: #345b63;
+  color: rgb(241, 237, 237);
 }
 
+.date-button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.date-button {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.form-container {
+  width: 50%;
+  background-color: #d4ecdd;
+  border-radius: 20px;
+}
+
+.header-bar {
+  border-radius: 10px;
+  padding-left: 10px;
+}
 .list-background {
   background-color: rgb(179, 178, 178);
+}
+
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: 0.75rem 1.25rem;
+  background-color: #f2f8fa;
+  border: 1px solid rgba(0, 0, 0, 0.125);
 }
 .main {
   background-color: rgb(212, 211, 211);
   height: 100%;
   min-height: 100vh;
 }
+.page-head-container {
+  background-color: #d4ecdd;
+  width: 40%;
+  padding: 15px;
+  border-radius: 10px;
+  border: 2px solid #000000;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
 .side-bar {
-  background-color: #dfdfde;
+  background-color: #345b63;
   min-width: 200px;
 }
 .spectrum-background {
-  background: linear-gradient(#678983, transparent),
-    linear-gradient(to top left, #e6ddc4, transparent),
-    linear-gradient(to top right, #f0e9d2, transparent);
+  background-color: #f2f8fa;
   background-blend-mode: screen;
 }
 
-@media (min-width: 768px) {
-  .main {
-    height: 100%;
-    min-height: 100vh;
+.table-tile {
+  padding: 15px;
+  border-radius: 10px;
+  margin: 10px;
+  width: 700px;
+  /* background-color: rgba(239, 247, 245, 0.986); */
+}
+.reservation-tile {
+  background-color: #2b2d42;
+  padding: 15px;
+  border-radius: 10px;
+  color: white;
+  margin: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+  input {
+    width: 100%;
   }
 
-  .side-bar {
-    background-color: #181d31;
-    min-width: 200px;
-    min-height: 100%;
+  .form-button {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .form-card,
+  .table-tile,
+  .page-head-container {
+    width: 100%;
+  }
+  h1,
+  h2,
+  h3 {
+    text-align: center;
+    font-size: 1.75rem;
+  }
+
+  .page-head-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .date-button {
+    width: 50%;
+    margin: 0 auto;
+  }
+  .side-bar,
+  .row {
+    height: fit-content;
+  }
+  .res-button-container,
+  .table-button-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .reservation-button {
+    margin-bottom: 5px;
+  }
+
+  .reservations-container {
+    flex-direction: column;
+  }
+
+  .reservation-tile,
+  .table-tile {
+    text-align: center;
+  }
+  .tables-container {
+    justify-content: center;
+  }
+  p {
+    display: block;
+    min-width: none;
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 474px) {
+  .tables-container {
+    flex-direction: column;
+  }
+  .page-head-container,
+  .res-button-container,
+  .table-tile {
+    margin: 5px 0px 5px 0px;
+    text-align: center;
+  }
+  p {
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
   }
 }

@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
-import ErrorAlert from "../layout/ErrorAlert";
-import { updateReservationStatus } from "../utils/api";
+import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import ErrorAlert from '../layout/ErrorAlert';
+import { updateReservationStatus } from '../utils/api';
+
+const dayjs = require('dayjs');
 
 function ReservationDetail({ reservation }) {
   const history = useHistory();
@@ -12,7 +14,7 @@ function ReservationDetail({ reservation }) {
 
   useEffect(() => {
     if (
-      currentReservation.status === "booked" ||
+      currentReservation.status === 'booked' ||
       currentReservation.status === null
     ) {
       setShowSeat(true);
@@ -24,7 +26,7 @@ function ReservationDetail({ reservation }) {
     setError(null);
     setShowSeat(false);
     updateReservationStatus(
-      { status: "seated" },
+      { status: 'seated' },
       currentReservation.reservation_id
     )
       .then((response) => {
@@ -38,11 +40,11 @@ function ReservationDetail({ reservation }) {
     e.preventDefault();
     setError(null);
     const confirmBox = window.confirm(
-      "Do you want to cancel this reservation? This cannot be undone."
+      'Do you want to cancel this reservation? This cannot be undone.'
     );
     if (confirmBox === true) {
       updateReservationStatus(
-        { status: "cancelled" },
+        { status: 'cancelled' },
         currentReservation.reservation_id
       )
         .then((response) => {
@@ -54,34 +56,35 @@ function ReservationDetail({ reservation }) {
   };
 
   return (
-    <div className="card text-left card-background">
+    <div className='card text-left card-background'>
       <ErrorAlert error={error} />
-      <div className="card-body">
-        <h4 className="card-title text-center">
+      <div className='card-body'>
+        <h4 className='card-title text-center'>
           {currentReservation.reservation_time}
         </h4>
-        <p className="card-text text-center">
-          {currentReservation.reservation_date}
+        <p className='card-text text-center'>
+          {dayjs(currentReservation.reservation_date).format('MM/DD/YYYY')}
         </p>
 
-        <p className="card-text">
+        <p className='card-text'>
           {currentReservation.first_name} {currentReservation.last_name}
         </p>
-        <p className="card-text">{currentReservation.mobile_number}</p>
-        <p className="card-text">Party Size: {currentReservation.people}</p>
+        <p className='card-text'>{currentReservation.mobile_number}</p>
+        <p className='card-text'>Party Size: {currentReservation.people}</p>
         <p
-          className="text-center boldtext"
+          className='card-text'
           data-reservation-id-status={currentReservation.reservation_id}
         >
-          {currentReservation.status ? currentReservation.status : "booked"}
+          Status:
+          {currentReservation.status ? currentReservation.status : 'booked'}
         </p>
 
-        <div className="d-flex justify-content-center mb-1">
+        <div className='d-flex justify-content-center mb-3'>
           {showSeat ? (
             <a
               href={`/reservations/${currentReservation.reservation_id}/seat`}
               onClick={handleSeat}
-              className="card-link btn btn-primary btn-sm"
+              className='card-link btn btn-primary btn-lg'
             >
               Seat
             </a>
@@ -90,19 +93,19 @@ function ReservationDetail({ reservation }) {
           )}
         </div>
 
-        <div className="d-flex justify-content-center btn-group">
+        <div className='d-flex justify-content-center '>
           <button
             data-reservation-id-cancel={currentReservation.reservation_id}
             onClick={handleCancelRes}
-            className="btn btn-danger btn-sm btn-outline-dark"
+            className='btn btn-danger btn-sm '
           >
             Cancel Reservation
           </button>
           <a
             href={`/reservations/${currentReservation.reservation_id}/edit`}
-            className="btn btn-sm btn-outline-dark"
+            className='btn btn-sm btn-info'
           >
-            EDIT
+            Edit
           </a>
         </div>
       </div>

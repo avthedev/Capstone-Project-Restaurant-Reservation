@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
-import ErrorAlert from "../layout/ErrorAlert";
+import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import ErrorAlert from '../layout/ErrorAlert';
 import {
   deleteReservationId,
   deleteTable,
   updateReservationStatus,
-} from "../utils/api";
+} from '../utils/api';
 
 function TableDetail({ table }) {
   const history = useHistory();
   const [currentTable, setCurrentTable] = useState(table);
-  const [tableStatus, setTableStatus] = useState("Free");
+  const [tableStatus, setTableStatus] = useState('Free');
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ function TableDetail({ table }) {
         `Occupied by reservation ID: ${currentTable.reservation_id}`
       );
     } else {
-      setTableStatus("Available");
+      setTableStatus('Available');
     }
   }, [currentTable]);
 
@@ -27,11 +27,11 @@ function TableDetail({ table }) {
     e.preventDefault();
     setError(null);
     const confirmBox = window.confirm(
-      "Is this table ready to seat new guests? This cannot be undone."
+      'Is this table ready to seat new guests? This cannot be undone.'
     );
     if (confirmBox === true) {
       updateReservationStatus(
-        { status: "finished" },
+        { status: 'finished' },
         currentTable.reservation_id
       ).catch(setError);
       deleteReservationId(currentTable.table_id)
@@ -51,7 +51,7 @@ function TableDetail({ table }) {
     e.preventDefault();
     setError(null);
     const confirmBox = window.confirm(
-      "Are you sure you want to delete this table? This cannot be undone."
+      'Are you sure you want to delete this table? This cannot be undone.'
     );
     if (confirmBox === true) {
       deleteTable(currentTable.table_id).catch(setError);
@@ -60,40 +60,42 @@ function TableDetail({ table }) {
   };
 
   return (
-    <div className="card text-left card-background">
+    <div className=' m-2 rounded card text-left card-background'>
       <ErrorAlert error={error} />
-      <div className="card-body">
-        <p className="card-text bold-text">
+      <div className='card-body'>
+        <p className='card-text bold-text'>
           Table Name: {currentTable.table_name}
         </p>
-        <p className="card-text">Table Capacity: {currentTable.capacity}</p>
+        <p className='card-text'>Table Capacity: {currentTable.capacity}</p>
         <p
-          className="card-text"
+          className='card-text'
           data-table-id-status={`${currentTable.table_id}`}
         >
           {tableStatus}
         </p>
-        <div className="d-flex justify-content-center">
-          {tableStatus === "Available" ? (
+        <div className='d-flex float-left'>
+          {tableStatus === 'Available' ? (
             <div></div>
           ) : (
             <div>
+              <button className='btn btn-danger mr-2' onClick={handleCancel}>
+                Cancel
+              </button>
               <button
-                className="btn btn-primary"
+                className='btn btn-primary'
                 data-table-id-finish={currentTable.table_id}
                 onClick={handleFinish}
               >
-                FINISH
-              </button>{" "}
-              <button className="btn btn-danger" onClick={handleCancel}>
-                CANCEL
+                Finish
               </button>
             </div>
           )}
         </div>
-        <button className="btn btn-danger float-right" onClick={handleDelete}>
-          Delete
-        </button>
+        <div>
+          <button className='btn btn-danger float-right' onClick={handleDelete}>
+            Delete
+          </button>
+        </div>
       </div>
     </div>
   );

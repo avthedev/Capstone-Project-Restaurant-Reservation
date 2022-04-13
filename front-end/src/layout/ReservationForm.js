@@ -1,4 +1,4 @@
-import { useHistory } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 
 function ReservationForm({ handleSubmit, formData, setFormData }) {
   const history = useHistory();
@@ -9,16 +9,16 @@ function ReservationForm({ handleSubmit, formData, setFormData }) {
   };
 
   return (
-    <div className="container">
-      <h1 className="flex-row m-3">New Reservation Form</h1>
-      <div className="row m-3">
-        <form className="form-group" onSubmit={handleSubmit}>
-          <label className="form-label">First Name:</label>
+    <div className='container'>
+      <h1 className='flex-row m-3'>Create a Reservation</h1>
+      <div className='col m-1 p-3 form-container '>
+        <form className='form-group' onSubmit={handleSubmit}>
+          <label className='form-label'>First Name:</label>
           <br />
           <input
-            name="first_name"
-            placeholder="James"
-            type="text"
+            name='first_name'
+            placeholder='James'
+            type='text'
             required
             onChange={(e) =>
               setFormData({
@@ -31,15 +31,15 @@ function ReservationForm({ handleSubmit, formData, setFormData }) {
               })
             }
             value={formData.first_name}
-            className="form-control"
+            className='form-control'
           />
           <br />
-          <label className="form-label">Last Name:</label>
+          <label className='form-label'>Last Name:</label>
           <br />
           <input
-            name="last_name"
-            placeholder="Bond"
-            type="text"
+            name='last_name'
+            placeholder='Bond'
+            type='text'
             required
             onChange={(e) =>
               setFormData({
@@ -52,15 +52,16 @@ function ReservationForm({ handleSubmit, formData, setFormData }) {
               })
             }
             value={formData.last_name}
-            className="form-control"
+            className='form-control'
           />
           <br />
-          <label className="form-label">Mobile Number:</label>
+          <label className='form-label'>Mobile Number:</label>
           <br />
           <input
-            name="mobile_number"
-            placeholder="(999) 999-9999"
-            type="text"
+            name='mobile_number'
+            placeholder='(999) 999-9999'
+            type='tel'
+            id='mobile-number'
             required
             onChange={(e) =>
               setFormData({
@@ -73,14 +74,14 @@ function ReservationForm({ handleSubmit, formData, setFormData }) {
               })
             }
             value={formData.mobile_number}
-            className="form-control"
+            className='form-control'
           />
           <br />
           <label>Reservation Date:</label>
           <br />
           <input
-            name="reservation_date"
-            type="date"
+            name='reservation_date'
+            type='date'
             required
             onChange={(e) =>
               setFormData({
@@ -93,14 +94,16 @@ function ReservationForm({ handleSubmit, formData, setFormData }) {
               })
             }
             value={formData.reservation_date}
-            className="form-control"
+            className='form-control'
           />
           <br />
           <label>Reservation Time:</label>
           <br />
           <input
-            name="reservation_time"
-            type="time"
+            name='reservation_time'
+            pattern='[0-9]{2}:[0-9]{2}'
+            type='time'
+            id='reservation_time'
             required
             onChange={(e) =>
               setFormData({
@@ -113,14 +116,14 @@ function ReservationForm({ handleSubmit, formData, setFormData }) {
               })
             }
             value={formData.reservation_time}
-            className="form-control"
+            className='form-control'
           />
           <br />
           <label>Amount of People:</label>
           <br />
           <input
-            name="people"
-            type="number"
+            name='people'
+            type='number'
             required
             onChange={(e) =>
               setFormData({
@@ -133,16 +136,16 @@ function ReservationForm({ handleSubmit, formData, setFormData }) {
               })
             }
             value={formData.people}
-            className="form-control"
+            className='form-control'
           />
           <br />
 
-          <div className="d-flex justify-content-around">
-            <button className="btn btn-danger" onClick={handleCancel}>
-              CANCEL
+          <div className='d-flex justify-content-around'>
+            <button className='btn btn-danger' onClick={handleCancel}>
+              Cancel
             </button>
-            <button className="btn btn-primary" type="submit">
-              SUBMIT
+            <button className='btn btn-primary' type='submit'>
+              Submit
             </button>
           </div>
         </form>
