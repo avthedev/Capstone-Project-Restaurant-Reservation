@@ -8,6 +8,9 @@ body {
   background-color: #345b63;
   color: rgb(241, 237, 237);
 }
+.container {
+  max-width: 40%;
+}
 
 .date-button-container {
   display: flex;
@@ -49,7 +52,7 @@ body {
 }
 .page-head-container {
   background-color: #d4ecdd;
-  width: 40%;
+
   padding: 15px;
   border-radius: 10px;
   border: 2px solid #000000;
@@ -69,10 +72,15 @@ body {
 
 .table-tile {
   padding: 15px;
+  margin: 1px;
   border-radius: 10px;
-  margin: 10px;
   width: 700px;
-  /* background-color: rgba(239, 247, 245, 0.986); */
+}
+.table-tile-2 {
+  padding: 15px;
+  margin: 20px;
+  border-radius: 10px;
+  width: 700px;
 }
 .reservation-tile {
   background-color: #2b2d42;
@@ -86,7 +94,28 @@ body {
   input {
     width: 100%;
   }
+  button {
+    width: 50%;
+  }
 
+  .btn-dark {
+    margin-top: 5px;
+    margin-bottom: 1px;
+  }
+  .page-head-container {
+    align-items: center;
+  }
+  .container {
+    max-width: 100%;
+  }
+
+  .form-container {
+    width: 100%;
+  }
+
+  input.form-control {
+    max-width: 100%;
+  }
   .form-button {
     width: 100%;
     margin-top: 10px;
@@ -95,6 +124,9 @@ body {
   .form-card,
   .table-tile,
   .page-head-container {
+    width: 100%;
+  }
+  .table-tile-2 {
     width: 100%;
   }
   h1,
@@ -125,14 +157,6 @@ body {
     margin-top: 10px;
   }
 
-  .reservation-button {
-    margin-bottom: 5px;
-  }
-
-  .reservations-container {
-    flex-direction: column;
-  }
-
   .reservation-tile,
   .table-tile {
     text-align: center;
@@ -148,9 +172,10 @@ body {
   }
 }
 @media only screen and (max-width: 474px) {
-  .tables-container {
-    flex-direction: column;
+  .container {
+    max-width: 50%;
   }
+
   .page-head-container,
   .res-button-container,
   .table-tile {

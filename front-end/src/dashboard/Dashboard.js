@@ -64,7 +64,7 @@ function Dashboard() {
   if (reservations) {
     return (
       <main className='m-3'>
-        <div className='page-head-container'>
+        <div className='page-head-container container m-1'>
           <div className='d-flex m-3 justify-content-center'>
             <h1>Dashboard</h1>
           </div>
@@ -97,14 +97,14 @@ function Dashboard() {
           </div>
         </div>
 
-        <div className='header-bar'>
+        <div className=''>
           <h1>Reservations</h1>
         </div>
 
-        <div className='table-tile row align-items-start'>
+        <div className='table-tile-2 d-flex'>
           {reservations &&
             reservations.map((res) => (
-              <div className='col-md-6 mb-3' key={res.reservation_id}>
+              <div className='col-sm-6 mb-1' key={res.reservation_id}>
                 <ReservationDetail reservation={res} />
               </div>
             ))}
@@ -112,16 +112,16 @@ function Dashboard() {
 
         <ErrorAlert error={error} />
 
-        <div className='header-bar'>
-          <h1 className='d-flex mb-3 justify-content-left'>Tables</h1>
-        </div>
-        <div className='table-tile row'>
-          {tables &&
-            tables.map((table) => (
-              <div className='col-md-6 mb-3' key={table.table_id}>
-                <TableDetail table={table} />
-              </div>
-            ))}
+        <div className=''>
+          <h1>Tables</h1>
+          <div className='table-tile row'>
+            {tables &&
+              tables.map((table) => (
+                <div className='col-md-6 mb-3' key={table.table_id}>
+                  <TableDetail table={table} />
+                </div>
+              ))}
+          </div>
         </div>
       </main>
     );

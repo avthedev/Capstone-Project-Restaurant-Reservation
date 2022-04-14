@@ -60,41 +60,51 @@ function TableDetail({ table }) {
   };
 
   return (
-    <div className=' m-2 rounded card text-left card-background'>
-      <ErrorAlert error={error} />
-      <div className='card-body'>
-        <p className='card-text bold-text'>
-          Table Name: {currentTable.table_name}
-        </p>
-        <p className='card-text'>Table Capacity: {currentTable.capacity}</p>
-        <p
-          className='card-text'
-          data-table-id-status={`${currentTable.table_id}`}
-        >
-          {tableStatus}
-        </p>
-        <div className='d-flex float-left'>
-          {tableStatus === 'Available' ? (
-            <div></div>
-          ) : (
+    <div className='row m-1'>
+      <div className='col-sm-12'>
+        <div className='card text-left card-background w-100'>
+          <ErrorAlert error={error} />
+          <div className='card-body'>
+            <p className='card-title bold-text'>
+              Table Name: {currentTable.table_name}
+            </p>
+            <p className='card-text'>Table Capacity: {currentTable.capacity}</p>
+            <p
+              className='card-text'
+              data-table-id-status={`${currentTable.table_id}`}
+            >
+              {tableStatus}
+            </p>
+            <div className='card-text'>
+              {tableStatus === 'Available' ? (
+                <div></div>
+              ) : (
+                <div>
+                  <button
+                    className='btn btn-danger mr-2'
+                    onClick={handleCancel}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    className='btn btn-primary'
+                    data-table-id-finish={currentTable.table_id}
+                    onClick={handleFinish}
+                  >
+                    Finish
+                  </button>
+                </div>
+              )}
+            </div>
             <div>
-              <button className='btn btn-danger mr-2' onClick={handleCancel}>
-                Cancel
-              </button>
               <button
-                className='btn btn-primary'
-                data-table-id-finish={currentTable.table_id}
-                onClick={handleFinish}
+                className='btn btn-danger float-right'
+                onClick={handleDelete}
               >
-                Finish
+                Delete
               </button>
             </div>
-          )}
-        </div>
-        <div>
-          <button className='btn btn-danger float-right' onClick={handleDelete}>
-            Delete
-          </button>
+          </div>
         </div>
       </div>
     </div>
